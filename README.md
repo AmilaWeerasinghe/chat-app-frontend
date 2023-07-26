@@ -44,3 +44,12 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+### We use Socket.io
+
+Unlike waiting for a request comes and ask for a response, in REST apis we use Socket.io for real time data transfer.
+Why we can't use REST apis?
+If we use REST then to know that some change has happened in the server, client (front-end) will have to send a HTTP request and based on the response from the server it can decide on the event happening or not. (This is a polling mechanism) .To make the efficeint we need to do polling everytime within very short time like 5 seconds , which is very costly. Instead of the we can use socket.io to let know client whenever a change has occured in the server in real time.
+
+WHy can't we use socket io instead of REST everywhere?
+Since this real time features are enabled, when there are multiple connections created from clients to the server, it will overload the server eventually. Hence if we need to perform some operations like CRUD operations when there is only an event has occured we can use REST instead of sockets.
