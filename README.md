@@ -53,3 +53,23 @@ If we use REST then to know that some change has happened in the server, client 
 
 WHy can't we use socket io instead of REST everywhere?
 Since this real time features are enabled, when there are multiple connections created from clients to the server, it will overload the server eventually. Hence if we need to perform some operations like CRUD operations when there is only an event has occured we can use REST instead of sockets.
+
+### Use pattern of lifting state up
+involves passing down state as props to the child component(home component) and then allowing the child component to modify that state through callback functions passed as props from the parent (App component).
+
+### lifting state up requires the change of child props interface type because i am using typescript now
+
+### How to track what is input by user? I am using onChange event in react
+Onchange event triggers for any keyboard input press, therefore we can validate any input realtime as well.
+We can use onchange in react input(Text input) and select(Dropdowns) elements
+
+### After getting valid userName and room we need to send out the socket emmitter.
+// Emit a custom event to the server
+socket.emit('customEvent', { message: 'Hello from the client!' });
+The data you send as the second argument can be of any valid JavaScript data type, including arrays, objects, strings, numbers, booleans, etc.
+
+### To navigate i am using react-dom navigator
+navigate('/chat', { replace: true });
+replace true to clear the history.
+
+
