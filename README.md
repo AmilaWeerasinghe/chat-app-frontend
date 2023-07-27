@@ -72,4 +72,14 @@ The data you send as the second argument can be of any valid JavaScript data typ
 navigate('/chat', { replace: true });
 replace true to clear the history.
 
+### Chat page
+All code in one page will make it complex
+Use components divided to make it simplified.
+
+A: Contains the room name, a list of users in that room, and a "Leave" button that removes the user from the room.
+
+B: The sent messages. Upon initial render, the last 100 messages sent in that room will be fetched from the database and shown to the user.
+
+C: An input and button to type and send a message.
+
 
